@@ -19,6 +19,15 @@
   <strong>Goal:</strong>
   <%= @product.goal %>
 </p>
-
+<tbody>
+<% @product.comments.each do |comment| %>
+  <tr>
+    <td><%=comment.commenter %></td>
+    <td><%= comment.content %><br></td>
+  </tr>
+<% end %>
+</tbody>
+<%=render 'comments_form'%>
+<%=link_to '更新', product_path(@product)%>
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
