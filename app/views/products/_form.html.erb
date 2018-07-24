@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :product_name %>
+  <div class="field mb-4">
+    <h6 class="mb-2 font-weight-bold">プロダクト名</h6>
+    <%= form.text_field :name, id: :product_name, class:"w-100"%>
   </div>
 
-  <div class="field">
-    <%= form.label :about %>
-    <%= form.text_field :about, id: :product_about %>
+  <div class="field mb-4">
+    <h6 class="mb-2 font-weight-bold">概要</h6>
+    <%= form.text_area :about, id: :product_about, class:"w-100"%>
   </div>
 
-  <div class="field">
-    <%= form.label :need_people %>
-    <%= form.text_field :need_people, id: :product_need_people %>
+  <div class="field mb-4">
+    <h6 class="mb-2 font-weight-bold">求める人</h6>
+    <%= form.text_area :need_people, id: :product_need_people, class:"w-100" %>
   </div>
 
-  <div class="field">
-    <%= form.label :goal %>
-    <%= form.text_field :goal, id: :product_goal %>
+  <div class="field mb-4">
+    <h6 class="mb-2 font-weight-bold">夏明けの目標</h6>
+    <%= form.text_area :goal, id: :product_goal, class:"w-100" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions text-center">
+    <%= form.submit "送信", class:"btn btn-primary w-50"%>
   </div>
 <% end %>

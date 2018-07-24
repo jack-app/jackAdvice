@@ -264,6 +264,11 @@ input {
   overflow: visible;
 }
 
+textarea{
+  border: solid 0.05px #ccc;
+  height: 100px;
+}
+
 button,
 select {
   text-transform: none;

@@ -21,20 +21,21 @@
 
 <div class="mt-5" style="position: relative;">
   <h4 class="w-100"  style="border-top: solid 0.5px; padding-top: 0.3em">みんなのコメント</h4>
-  <%=link_to '更新', product_path(@product), style:"position: absolute; right:0px; top:0px;", class: "mt-1 btn btn-success"%>
+  <%=link_to '更新', product_path(@product), style:"position: absolute; right:0px; top:0px;", class: "mt-1 btn btn-outline-primary"%>
 </div>
 
 <br>
 <div class="p-1 mb-4" style="height:300px;overflow:auto;background-color:#eee;">
-  <% @product.comments.each do |comment| %>
-    <div class="border p-3 my-1" style="background-color: #fff;">
+  <% @product.comments.reverse_each do |comment| %>
+    <div class="border p-3 my-1" style="background-color: #fff; position:relative;">
       投稿者: <%=comment.commenter %>
       <br>
       <%= simple_format comment.content %>
+      <%= comment[:created_at].strftime("%Y-%m-%d %H:%M %S")+"s" %>
     </div>
   <% end %>
 </div>
 
 <%=render 'comments_form'%>
-<%=link_to "戻る", products_path, class:"btn btn-success"%>
+<%=link_to "戻る", products_path, class:"btn btn-outline-primary"%>
 <br><br><br><br>
