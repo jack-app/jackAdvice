@@ -1,33 +1,40 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+<div class="mb-4">
+  <h6 class="mb-2 font-weight-bold">プロダクト名</h6>
+  <p class="fs-15"><%=@product.name%></p>
+</div>
 
-<p>
-  <strong>About:</strong>
-  <%= @product.about %>
-</p>
+<div class="mb-4">
+  <h6 class="mb-2 font-weight-bold">概要</h6>
+  <p class="fs-15"><%=@product.about%></p>
+</div>
 
-<p>
-  <strong>Need people:</strong>
-  <%= @product.need_people %>
-</p>
+<div class="mb-4">
+  <h6 class="mb-2 font-weight-bold">求める人</h6>
+  <p class="fs-15"><%=@product.need_people%></p>
+</div>
+<div class="mb-4">
+  <h6 class="mb-2 font-weight-bold">夏明けの目標</h6>
+  <p class="fs-15"><%=@product.goal%></p>
+</div>
 
-<p>
-  <strong>Goal:</strong>
-  <%= @product.goal %>
-</p>
-<tbody>
-<% @product.comments.each do |comment| %>
-  <tr>
-    <td><%=comment.commenter %></td>
-    <td><%= comment.content %><br></td>
-  </tr>
-<% end %>
-</tbody>
+<div class="mt-5" style="position: relative;">
+  <h4 class="w-100"  style="border-top: solid 0.5px; padding-top: 0.3em">みんなのコメント</h4>
+  <%=link_to '更新', product_path(@product), style:"position: absolute; right:0px; top:0px;", class: "mt-1 btn btn-success"%>
+</div>
+
+<br>
+<div class="p-1 mb-4" style="height:300px;overflow:auto;background-color:#eee;">
+  <% @product.comments.each do |comment| %>
+    <div class="border p-3 my-1" style="background-color: #fff;">
+      投稿者: <%=comment.commenter %>
+      <br>
+      <%= simple_format comment.content %>
+    </div>
+  <% end %>
+</div>
+
 <%=render 'comments_form'%>
-<%=link_to '更新', product_path(@product)%>
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<%=link_to "戻る", products_path, class:"btn btn-success"%>
+<br><br><br><br>

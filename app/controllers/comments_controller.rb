@@ -1,6 +1,9 @@
 class CommentsController < ApplicationController
 
   def create
+    if params[:comment][:commenter] == ""
+      params[:comment][:commenter] = "じゃっくん"
+    end
     Comment.create(create_params)
     redirect_to controller: :products, action: :show, id: params[:product_id]
   end
