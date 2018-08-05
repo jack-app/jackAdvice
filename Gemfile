@@ -53,6 +53,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', groups: %w(test development), require: false
-gem 'pg', groups: %w(production), require: false
+gem 'sqlite3', group: :development
+# 本番ではpostgressを使用する
+gem 'pg', group: :production
