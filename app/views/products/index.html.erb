@@ -9,19 +9,19 @@
     </thead>
 
     <tbody>
-      <% @products.each do |product| %>
+      <% @event.products.each do |product| %>
         <tr>
-          <td><%=link_to product.name, product, class: "w-100 h-100 d-inline-block", style:"padding: 1.2em; font-size: 1.3em;" %></td>
-          <!-- <td><%= link_to 'Edit', edit_product_path(product) %></td>
-          <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+          <td><%=link_to product.name, event_product_path(@event, product), class: "w-100 h-100 d-inline-block", style:"padding: 1.2em; font-size: 1.3em;" %></td>
+          <%# <td><%= link_to 'Edit', edit_product_path(product)</td> %>
+          <%# <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } </td> %>
         </tr>
       <% end %>
     </tbody>
   </table>
 </div>
 
-
 <br>
 <div class="text-right mx-auto" style="max-width: 500px">
-  <%= link_to 'プロダクトを追加', new_product_path, class: "btn btn-outline-primary" %>
+  <%= link_to "戻る", events_path, class:"btn btn-outline-primary float-left" %>
+  <%= link_to 'プロダクトを追加', new_event_product_path, class: "btn btn-primary" %>
 </div>

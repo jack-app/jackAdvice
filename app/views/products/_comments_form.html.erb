@@ -1,4 +1,4 @@
-<%= form_with(model: [@product,@comment], local: true, url: product_comments_path(@product)) do |form| %>
+<%= form_with(model: [@event,@product,@comment], local: true, url: event_product_comments_path) do |form| %>
   <% if @comment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
