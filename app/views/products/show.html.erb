@@ -11,17 +11,23 @@
 </div>
 
 <div class="mb-4">
-  <h6 class="mb-2 font-weight-bold">求める人</h6>
+  <h6 class="mb-2 font-weight-bold">メンバー</h6>
+  <p class="fs-15"><%=@product.member%></p>
+</div>
+
+<div class="mb-4">
+  <h6 class="mb-2 font-weight-bold">こんなメンバーに来てほしい！</h6>
   <p class="fs-15"><%=@product.need_people%></p>
 </div>
+
 <div class="mb-4">
-  <h6 class="mb-2 font-weight-bold">夏明けの目標</h6>
-  <p class="fs-15"><%=@product.goal%></p>
+  <h6 class="mb-2 font-weight-bold">参考URL</h6>
+  <p class="fs-15"><%=@product.reference_url%></p>
 </div>
 
 <div class="mt-5" style="position: relative;">
   <h4 class="w-100"  style="border-top: solid 0.5px; padding-top: 0.3em">みんなのコメント</h4>
-  <%=link_to '更新', product_path(@product), style:"position: absolute; right:0px; top:0px;", class: "mt-1 btn btn-outline-primary"%>
+  <%=link_to '更新', event_product_path(@product), style:"position: absolute; right:0px; top:0px;", class: "mt-1 btn btn-outline-primary"%>
 </div>
 
 <br>
@@ -36,6 +42,6 @@
   <% end %>
 </div>
 
-<%=render 'comments_form'%>
-<%=link_to "戻る", products_path, class:"btn btn-outline-primary"%>
+<%=render 'comments_form', product: @product %>
+<%=link_to "戻る", event_products_path, class:"btn btn-outline-primary"%>
 <br><br><br><br>

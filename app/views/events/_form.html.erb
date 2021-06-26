@@ -1,0 +1,26 @@
+<%= form_with(model: @event, local:true) do |form| %>
+  <% if event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field mb-4">
+    <h6 class="mb-2 font-weight-bold">イベント名</h6>
+    <%= form.text_field :name, id: :event_name, class:"w-100"%>
+  </div>
+  <div class="field mb-4">
+    <h6 class="mb-2 font-weight-bold">日にち</h6>
+    <%= form.date_field :date, id: :event_date, class:"w-100"%>
+  </div>
+  <div class="actions text-center">
+    <%= form.submit "作成", class:"btn btn-primary w-50"%>
+  </div>
+
+<% end %>

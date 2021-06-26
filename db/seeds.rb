@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Event.create(
+    [
+        {
+            name: "jackResult",
+            date: "2021-04-30"
+        },
+        {
+            name: "名大祭Result",
+            date: "2021-06-26"
+        }
+    ]
+)
